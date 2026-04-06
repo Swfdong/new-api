@@ -3376,6 +3376,21 @@
     "从剪贴板粘贴配置": "Paste Config",
     "剪贴板中未检测到连接信息": "No connection info found in clipboard",
     "连接信息已填入": "Connection info applied",
-    "无法读取剪贴板": "Cannot read clipboard"
+    "无法读取剪贴板": "Cannot read clipboard",
+    "一行代码迁移": "Migrate with One Line",
+    "专注为企业提供高质量、低成本的大模型接入服务": "Focused on providing enterprises with high-quality, low-cost LLM access",
+    "为什么选择我们": "Why Choose Us",
+    "企业专属 · 全球顶级模型供应商": "Enterprise-Grade · World's Top Model Provider",
+    "低于官方的模型价格": "Below Official Model Pricing",
+    "多通道并行部署与智能故障转移机制，在线路可用的前提下最大化服务稳定性，业务不受单点故障影响。": "Multi-channel parallel deployment and intelligent failover maximize service stability when routes are available, protecting your business from single-point failures.",
+    "完全兼容 OpenAI API 规范，仅需将 Base URL 替换为我们的地址，无需修改任何业务逻辑即可完成接入。": "Fully compatible with OpenAI API standards — simply replace the Base URL with ours, no business logic changes required.",
+    "实时 Token 用量统计、团队多账户配额分配、按模型和渠道的成本拆解，让每一分 AI 开销都清晰可见。": "Real-time token usage stats, team quota allocation, and per-model cost breakdown make every AI expenditure fully transparent.",
+    "显著降低成本": "Significantly Reduce Costs",
+    "核心优势": "Core Advantages",
+    "比官方直连更优惠的折扣，40+ 主流模型全覆盖，兼容 OpenAI / Anthropic 接口，替换一行 URL 即可完成迁移。": "Better discounts than official pricing, 40+ mainstream models, compatible with OpenAI / Anthropic API — migrate by changing just one URL.",
+    "精细用量管控": "Fine-Grained Usage Control",
+    "通过规模化采购折扣与多渠道路由优化，API 调用成本显著低于官方直连价格，帮助团队大幅削减 AI 开支。": "Through bulk purchase discounts and multi-channel routing optimization, API costs are significantly lower than official pricing, helping teams substantially cut AI expenses.",
+    "领先行业的可用表现": "Industry-Leading Availability",
+    "高可用保障": "High Availability Guarantee"
   }
 }

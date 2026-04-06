@@ -23,9 +23,12 @@ web/bun.lock
 plans
 .claude
 
+.playwright-mcp
+
 electron/node_modules
 electron/dist
 data/
 .gomodcache/
 .gocache-temp
 .gopath
+web/bun.lock

@@ -156,12 +156,12 @@ code {
 }
 
 .sidebar-nav-item:hover {
-  background-color: rgba(var(--semi-blue-0), 0.08);
+  background-color: var(--semi-color-primary-light-default);
   color: var(--semi-color-primary);
 }
 
 .sidebar-nav-item-selected {
-  background-color: rgba(var(--semi-blue-0), 0.12);
+  background-color: var(--semi-color-primary-light-active);
   color: var(--semi-color-primary);
   font-weight: 500;
 }
@@ -711,7 +711,7 @@ html.dark .sbg-variant-green {
     90deg,
     currentColor 0%,
     currentColor 40%,
-    #facc15 50%,
+    #D4A84C 50%,
     currentColor 60%,
     currentColor 100%
   );
@@ -746,41 +746,31 @@ html.dark .sbg-variant-green {
   padding-right: 0 !important;
 }
 
-/* ==================== Banner 背景模糊球 ==================== */
-.blur-ball {
+/* ==================== 首页 Hero 区域背景 ==================== */
+/* 从顶部中心向下的椭圆环境光 —— 有意为之的建筑照明感，非随机浮动色斑 */
+.home-hero::before {
+  content: '';
   position: absolute;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.blur-ball-indigo {
-  background: #6366f1;
-  /* indigo-500 */
-  top: 40px;
+  top: -10%;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0.5;
+  width: min(1000px, 130vw);
+  height: 70%;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(184, 120, 8, 0.13) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
-.blur-ball-teal {
-  background: #14b8a6;
-  /* teal-400 */
-  top: 200px;
-  left: 30%;
-  opacity: 0.4;
-}
-
-/* 浅色主题下让模糊球更柔和 */
-html:not(.dark) .blur-ball-indigo {
-  opacity: 0.25;
-}
-
-html:not(.dark) .blur-ball-teal {
-  opacity: 0.2;
+html.dark .home-hero::before {
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(212, 168, 76, 0.10) 0%,
+    transparent 65%
+  );
 }
 
 /* ==================== 卡片马卡龙模糊球（类封装） ==================== */
@@ -788,15 +778,15 @@ html:not(.dark) .blur-ball-teal {
 .with-pastel-balls {
   position: relative;
   overflow: hidden;
-  /* 默认变量（明亮模式） */
-  --pb1: #ffd1dc;
-  /* 粉 */
-  --pb2: #e5d4ff;
-  /* 薰衣草 */
-  --pb3: #d1fff6;
-  /* 薄荷 */
-  --pb4: #ffe5d9;
-  /* 桃 */
+  /* 默认变量（明亮模式）：暖米色系 */
+  --pb1: #FFE8C8;
+  /* 暖桃 */
+  --pb2: #FFF3C8;
+  /* 奶油黄 */
+  --pb3: #FDECD8;
+  /* 杏色 */
+  --pb4: #F8E4A8;
+  /* 浅琥珀 */
   --pb-opacity: 0.55;
   --pb-blur: 60px;
 }
@@ -822,15 +812,15 @@ html:not(.dark) .blur-ball-teal {
 
 /* 暗黑模式下更柔和的色彩和透明度 */
 html.dark .with-pastel-balls {
-  /* 使用与明亮模式一致的“刚才那组”马卡龙色，但整体更柔和 */
-  --pb1: #ffd1dc;
-  /* 粉 */
-  --pb2: #e5d4ff;
-  /* 薰衣草 */
-  --pb3: #d1fff6;
-  /* 薄荷 */
-  --pb4: #ffe5d9;
-  /* 桃 */
+  /* 暗色模式：保持暖色调但更柔和 */
+  --pb1: #FFE8C8;
+  /* 暖桃 */
+  --pb2: #FFF3C8;
+  /* 奶油黄 */
+  --pb3: #FDECD8;
+  /* 杏色 */
+  --pb4: #F8E4A8;
+  /* 浅琥珀 */
   --pb-opacity: 0.36;
   --pb-blur: 65px;
 }
@@ -937,6 +927,15 @@ html.dark .with-pastel-balls::before {
   padding: 10px !important;
 }
 
+/* 卡片轻阴影：靠elevation而非粗边框区分层级 */
+.semi-card {
+  box-shadow: 0 1px 3px rgba(26, 23, 19, 0.06), 0 1px 2px rgba(26, 23, 19, 0.04);
+}
+
+html.dark .semi-card {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
 /* ==================== 使用日志: channel affinity tag ==================== */
 .semi-tag.channel-affinity-tag {
   border: 1px solid rgba(var(--semi-cyan-5), 0.35);
@@ -979,7 +978,7 @@ html.dark .with-pastel-balls::before {
 .semi-select,
 .semi-button,
 .semi-datepicker-range-input {
-  border-radius: 10px !important;
+  border-radius: 6px !important;
 }
 
 @keyframes slideInLeft {
@@ -1006,3 +1005,100 @@ html.dark .with-pastel-balls::before {
 }
 
 .ec-dbcd0a3c01b55203 { forced-color-adjust: auto; }
+
+/* ==================== 自定义主题：暖米灰 × 琥珀金 ==================== */
+/* 覆盖 Semi Design CSS Token，非层叠规则优先级高于 @layer semi */
+
+/* --- 浅色模式：极浅暖米灰底色 --- */
+html:not(.dark) body {
+  /* 主色调：琥珀金（深色版，保证浅色背景下对比度） */
+  --semi-color-primary:               #B87808;
+  --semi-color-primary-hover:         #9E6807;
+  --semi-color-primary-active:        #895B06;
+  --semi-color-primary-disabled:      rgba(184, 120, 8, 0.35);
+  --semi-color-primary-light-default: rgba(184, 120, 8, 0.08);
+  --semi-color-primary-light-hover:   rgba(184, 120, 8, 0.14);
+  --semi-color-primary-light-active:  rgba(184, 120, 8, 0.22);
+
+  /* 背景层级：极浅暖米灰（参考 Pantone 2026 暖中性色系） */
+  --semi-color-bg-0:      #F7F4EF;   /* 页面底色 */
+  --semi-color-bg-1:      #FDFCF9;   /* 卡片 / 面板 */
+  --semi-color-bg-2:      #F0EDE7;   /* 嵌套卡片 */
+  --semi-color-bg-3:      #ECE9E2;   /* 表头 / 深色区域 */
+  --semi-color-bg-4:      #E5E1D9;   /* 最深背景层 */
+  --semi-color-nav-bg:    #F7F4EF;
+  --semi-color-overlay-bg: rgba(26, 23, 19, 0.5);
+
+  /* 填充色（输入框、选择器背景等） */
+  --semi-color-fill-0: #EDEAE3;
+  --semi-color-fill-1: #E3DFD7;
+  --semi-color-fill-2: #D8D4CB;
+
+  /* 边框：极细弱线，靠背景层级区分而非粗边框 */
+  --semi-color-border: rgba(26, 23, 19, 0.09);
+
+  /* 文字层级 */
+  --semi-color-text-0: #1A1713;   /* 主文字：暖黑 */
+  --semi-color-text-1: #3D3733;   /* 次文字 */
+  --semi-color-text-2: #6B605A;   /* 辅助文字 */
+  --semi-color-text-3: #9D9187;   /* 禁用文字 */
+
+  /* 链接 */
+  --semi-color-link:         #B87808;
+  --semi-color-link-hover:   #9E6807;
+  --semi-color-link-active:  #895B06;
+  --semi-color-link-visited: #7A6080;
+
+  /* focus 边框（输入框聚焦高亮） */
+  --semi-color-focus-border: #B87808;
+
+  /* 阴影 */
+  --semi-color-shadow: rgba(26, 23, 19, 0.08);
+}
+
+/* --- 深色模式：偏棕深灰底色 --- */
+html.dark body {
+  /* 主色调：古铜金（降饱和度，深色背景下更雅致） */
+  --semi-color-primary:               #D4A84C;
+  --semi-color-primary-hover:         #DFB360;
+  --semi-color-primary-active:        #C99E40;
+  --semi-color-primary-disabled:      rgba(212, 168, 76, 0.35);
+  --semi-color-primary-light-default: rgba(212, 168, 76, 0.12);
+  --semi-color-primary-light-hover:   rgba(212, 168, 76, 0.18);
+  --semi-color-primary-light-active:  rgba(212, 168, 76, 0.28);
+
+  /* 背景层级：偏棕深灰 */
+  --semi-color-bg-0:      #1C1917;   /* 页面底色 */
+  --semi-color-bg-1:      #242120;   /* 卡片 / 面板 */
+  --semi-color-bg-2:      #2C2927;   /* 嵌套卡片 */
+  --semi-color-bg-3:      #201E1B;   /* 表头 / 深色区域 */
+  --semi-color-bg-4:      #181614;   /* 最深背景层 */
+  --semi-color-nav-bg:    #1C1917;
+  --semi-color-overlay-bg: rgba(0, 0, 0, 0.6);
+
+  /* 填充色 */
+  --semi-color-fill-0: #302D2A;
+  --semi-color-fill-1: #383430;
+  --semi-color-fill-2: #403C37;
+
+  /* 边框：极细弱线，靠背景层级区分而非粗边框 */
+  --semi-color-border: rgba(240, 237, 231, 0.08);
+
+  /* 文字层级 */
+  --semi-color-text-0: #F0EDE7;   /* 主文字：暖白 */
+  --semi-color-text-1: #C8C3BB;   /* 次文字 */
+  --semi-color-text-2: #968E85;   /* 辅助文字 */
+  --semi-color-text-3: #5C5650;   /* 禁用文字 */
+
+  /* 链接 */
+  --semi-color-link:         #D4A84C;
+  --semi-color-link-hover:   #DFB360;
+  --semi-color-link-active:  #C99E40;
+  --semi-color-link-visited: #C49AE0;
+
+  /* focus 边框（输入框聚焦高亮） */
+  --semi-color-focus-border: #D4A84C;
+
+  /* 阴影 */
+  --semi-color-shadow: rgba(0, 0, 0, 0.4);
+}

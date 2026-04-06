@@ -3882,6 +3882,21 @@
     "从剪贴板粘贴配置": "Dán cấu hình",
     "剪贴板中未检测到连接信息": "Không tìm thấy thông tin kết nối trong bộ nhớ tạm",
     "连接信息已填入": "Đã áp dụng thông tin kết nối",
-    "无法读取剪贴板": "Không thể đọc bộ nhớ tạm"
+    "无法读取剪贴板": "Không thể đọc bộ nhớ tạm",
+    "一行代码迁移": "Di chuyển với một dòng code",
+    "专注为企业提供高质量、低成本的大模型接入服务": "Chuyên cung cấp dịch vụ truy cập mô hình lớn chất lượng cao, chi phí thấp cho doanh nghiệp",
+    "为什么选择我们": "Tại sao chọn chúng tôi",
+    "企业专属 · 全球顶级模型供应商": "Doanh nghiệp · Nhà cung cấp mô hình hàng đầu thế giới",
+    "低于官方的模型价格": "Giá mô hình thấp hơn chính thức",
+    "多通道并行部署与智能故障转移机制，在线路可用的前提下最大化服务稳定性，业务不受单点故障影响。": "Triển khai song song đa kênh và cơ chế chuyển đổi dự phòng thông minh đảm bảo tối đa độ ổn định khi tuyến hoạt động, bảo vệ doanh nghiệp khỏi lỗi điểm đơn.",
+    "完全兼容 OpenAI API 规范，仅需将 Base URL 替换为我们的地址，无需修改任何业务逻辑即可完成接入。": "Hoàn toàn tương thích tiêu chuẩn OpenAI API — chỉ cần thay Base URL bằng địa chỉ của chúng tôi, không cần sửa đổi logic nghiệp vụ.",
+    "实时 Token 用量统计、团队多账户配额分配、按模型和渠道的成本拆解，让每一分 AI 开销都清晰可见。": "Thống kê token theo thời gian thực, phân bổ quota nhóm, phân tích chi phí theo mô hình giúp mọi khoản chi AI hoàn toàn minh bạch.",
+    "显著降低成本": "Giảm đáng kể chi phí",
+    "核心优势": "Ưu thế cốt lõi",
+    "比官方直连更优惠的折扣，40+ 主流模型全覆盖，兼容 OpenAI / Anthropic 接口，替换一行 URL 即可完成迁移。": "Chiết khấu tốt hơn chính thức, hỗ trợ 40+ mô hình, tương thích API OpenAI / Anthropic — chỉ thay một dòng URL để hoàn tất di chuyển.",
+    "精细用量管控": "Kiểm soát mức sử dụng chi tiết",
+    "通过规模化采购折扣与多渠道路由优化，API 调用成本显著低于官方直连价格，帮助团队大幅削减 AI 开支。": "Thông qua chiết khấu mua sắm quy mô lớn và tối ưu hóa định tuyến đa kênh, chi phí API thấp hơn đáng kể so với giá chính thức, giúp nhóm cắt giảm mạnh chi phí AI.",
+    "领先行业的可用表现": "Hiệu suất sẵn sàng dẫn đầu ngành",
+    "高可用保障": "Đảm bảo tính khả dụng cao"
   }
 }
